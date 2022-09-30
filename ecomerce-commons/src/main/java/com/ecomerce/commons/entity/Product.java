@@ -1,5 +1,4 @@
-package com.ecomerce.price.entity;
-
+package com.ecomerce.commons.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,28 +16,20 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="prices")
-public class Price implements Serializable{
-	
+@Table(name="PRODUCTS")
+public class Product implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "brand_id")
-	private Long brandId;
-	@Column(name = "start_date")
+	private String code;
+	private String name;
+	@Column(nullable = false)
+	private boolean status;
+	@Column(name = "change_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date startDate;
-	@Column(name = "end_date")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date endDate;
-	@Column(name = "price_list")
-	private Long priceList;
-	@Column(name = "product_id")
-	private Long productId;
-	private int priority;
-	private double price;
-	@Column(name = "curr",length = 3)
-	private String codeIso;
-
+	private Date changeDate;
+	@Column(name = "user_update")
+	private String userUpdate;
+	
 	private static final long serialVersionUID = 1L;
 }
