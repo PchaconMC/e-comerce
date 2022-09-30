@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: price-service
+        uri: lb://price-service
+        predicates:
+          - Path=/api/price/**
+        filters:
+          - StripPrefix=2
+          - name: PriceFilter
+            args:
+              message: Hola, este es mi mensaje personalizado
+              cookieName: usuario
+              cookieVal: pchacon
+          - PriceFilter=Nueva cookie personalizada,dupla,PE4502CH
