@@ -18,7 +18,11 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
-
+/**
+ * 
+ * @author pchacon
+ *
+ */
 @Entity
 @Data
 @Table(name="PRICES")

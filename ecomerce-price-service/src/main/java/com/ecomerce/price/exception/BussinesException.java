@@ -4,7 +4,11 @@ import org.springframework.http.HttpStatus;
 
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * 
+ * @author pchacon
+ *
+ */
 @Getter
 @Setter
 public class BussinesException extends Exception {

@@ -1,5 +1,9 @@
 package com.ecomerce.commons.exception;
-
+/**
+ * 
+ * @author pchacon
+ *
+ */
 public class ExceptionResponse {
 
 	    private String type ="/errors/uncategorized";
