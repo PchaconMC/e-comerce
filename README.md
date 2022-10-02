@@ -66,6 +66,11 @@ Desarrollar unos test al endpoint rest que  validen las siguientes peticiones al
 | `brandId` | `Long` | **Required**. identificador de cadena |
 | `applicationDate` | `DateTime` | **Required**. fecha de aplicación |
 
+### Autenticación basica
+Se implementó autenticación basica con Spring Security, para lo cual se debe incluir en la petición al microservicio, la autenticación tipo Basic Auth:
+- Usuario: admin
+- Contraseña: admin.
+
 ### Resultados de la Prueba
 
 #### Test 1: petición a las 10:00 del día 14 del producto 35455 para la brand 1 (ZARA)
