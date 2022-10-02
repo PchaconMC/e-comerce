@@ -14,7 +14,11 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 import reactor.core.publisher.Mono;
-
+/**
+ * 
+ * @author pchacon
+ *
+ */
 @Component
 public class PriceGatewayFilterFactory extends AbstractGatewayFilterFactory<PriceGatewayFilterFactory.Config> {
 	private final Logger logger = LoggerFactory.getLogger(PriceGatewayFilterFactory.class);

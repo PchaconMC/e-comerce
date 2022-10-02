@@ -5,7 +5,11 @@ import java.util.List;
 
 import com.ecomerce.commons.entity.Price;
 import com.ecomerce.price.exception.BussinesException;
-
+/**
+ * 
+ * @author pchacon
+ *
+ */
 public interface IPriceService {
 	
 	public List<Price> findAll() throws BussinesException;

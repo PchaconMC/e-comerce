@@ -8,7 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.ecomerce.commons.entity.Price;
-
+/**
+ * 
+ * @author pchacon
+ *
+ */
 public interface PriceDao extends JpaRepository<Price, Long> {
 
 	 @Query("SELECT p FROM Price p WHERE p.product.id=:productId AND p.brand.id =:brandId AND :applicationDate BETWEEN p.startDate AND p.endDate ORDER BY p.priority DESC")

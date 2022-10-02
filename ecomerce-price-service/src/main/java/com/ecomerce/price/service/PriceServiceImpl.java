@@ -13,8 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ecomerce.price.dao.PriceDao;
 import com.ecomerce.price.exception.BussinesException;
+import com.ecomerce.commons.constants.ErrorMessageConstant;
 import com.ecomerce.commons.entity.Price;
-
+/**
+ * 
+ * @author pchacon
+ *
+ */
 @Service
 public class PriceServiceImpl implements IPriceService {
 	@Autowired
@@ -28,7 +33,7 @@ public class PriceServiceImpl implements IPriceService {
 	public List<Price> findAll() throws BussinesException {
 		List<Price> price = priceDao.findAll();
 		if(price ==null || price.isEmpty()) {
-			BussinesException exception = new BussinesException("100","Error de validación, Lista de Precio no existe", HttpStatus.PRECONDITION_FAILED);
+			BussinesException exception = new BussinesException(ErrorMessageConstant.CODE_100,ErrorMessageConstant.CODE_100_MESSAGE, HttpStatus.PRECONDITION_FAILED);
 			throw exception;	
 		}
 		return price;
@@ -39,7 +44,7 @@ public class PriceServiceImpl implements IPriceService {
 	public Price findById(Long id) throws BussinesException {
 		Price price = priceDao.findById(id).orElse(null);
 		if(price ==null) {
-			BussinesException exception = new BussinesException("100","Error de validación, Precio no existe", HttpStatus.PRECONDITION_FAILED);
+			BussinesException exception = new BussinesException(ErrorMessageConstant.CODE_101,ErrorMessageConstant.CODE_101_MESSAGE, HttpStatus.PRECONDITION_FAILED);
 			throw exception;	
 		}
 		return price;
@@ -57,7 +62,7 @@ public class PriceServiceImpl implements IPriceService {
 					.setParameter("applicationDate", applicationDate).setParameter("productId", productId)
 					.setParameter("brandId", brandId).setMaxResults(1).getSingleResult();
 		} catch (Exception ex) {
-			BussinesException exception = new BussinesException("100","Error de validación, Precio no existe", HttpStatus.PRECONDITION_FAILED);
+			BussinesException exception = new BussinesException(ErrorMessageConstant.CODE_101,ErrorMessageConstant.CODE_101_MESSAGE, HttpStatus.PRECONDITION_FAILED);
 			throw exception;
 		}
 		return price;

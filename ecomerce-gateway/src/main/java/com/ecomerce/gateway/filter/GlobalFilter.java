@@ -13,7 +13,11 @@ import org.springframework.web.server.ServerWebExchange;
 
 import reactor.core.publisher.Mono;
 
-
+/**
+ * 
+ * @author pchacon
+ *
+ */
 @Component
 public class GlobalFilter implements org.springframework.cloud.gateway.filter.GlobalFilter, Ordered {
 
